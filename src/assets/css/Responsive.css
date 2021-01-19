@@ -1,0 +1,41 @@
+@media only screen and (max-width: 600px) {
+    .welcome-text {
+        font-size: 52px !important;
+    }
+
+    .Typist .Cursor {
+        display: none !important;
+    }
+
+    .links-effect {
+        font-size: 60px !important;
+    }
+
+    .fp-right {
+        display: none !important;
+    }
+    .card-wrapper{
+        flex-direction: column ;
+        width: 100% !important;
+        justify-content: flex-end !important;
+        align-items: center;
+        height: 84%;
+    }
+    .card {
+        width: 130px !important;
+        height: 165px !important;
+        margin-left: 0 !important;
+        margin-bottom: 2em;
+    }
+    .info{
+        font-size: 10px !important;
+    }
+    .info p {
+        font-size: 12px !important;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+}

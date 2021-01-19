@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+body {
+    font-family: 'Inconsolata', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::selection {
+    background: #ba4a00;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-moz-selection {
+    background: #ba4a00;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+::-webkit-selection {
+    background: #ba4a00;
+    color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+/*loader*/
+
+    #app:not(:empty) + .sk-cube-grid {
+        display: none;
+    }
+
+.sk-cube-grid {
+    width: 40px;
+    height: 40px;
+    margin: 20% auto;
+    overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: #fff;
+    float: left;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
 }
+
+.sk-cube-grid .sk-cube1 {
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube2 {
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube3 {
+    animation-delay: 0.4s;
+}
+
+.sk-cube-grid .sk-cube4 {
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube5 {
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube6 {
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube7 {
+    animation-delay: 0s;
+}
+
+.sk-cube-grid .sk-cube8 {
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube9 {
+    animation-delay: 0.2s;
+}
+
+@keyframes sk-cubeGridScaleDelay {
+    0%,
+    70%,
+    100% {
+        transform: scale3D(1, 1, 1);
+    }
+    35% {
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+

@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import {useState, useEffect} from 'react'
 import './App.css';
-
+import {useRoutes} from "./routes";
+import Cursor from "./copmonents/Cursor";
+import MainMenu from "./copmonents/MainMenu";
+import NavState from "./context/navState";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [loading, setLoading] = useState(true)
+
+    const demoAsyncCall = () => {
+        return new Promise((resolve) => setTimeout(() => resolve(), 2000));
+    }
+
+    useEffect(() => {
+        demoAsyncCall().then(() => {
+            setLoading(!loading)
+        })
+    }, [])
+
+    // if (loading) {
+    //     return null
+    // }
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const routes = useRoutes()
+    return (
+        <div className="App">
+            <NavState>
+                <MainMenu/>
+            </NavState>
+            <Cursor/>
+            {routes}
+        </div>
+    );
 }
 
 export default App;
