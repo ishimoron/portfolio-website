@@ -2,27 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="theme-color" content="#000000"/>
     <meta
             name="description"
-            content="Web site created using create-react-app"
+            content="Web site created by ishimoron"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
+<!--    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>-->
+<!--    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;800&display=swap" rel="stylesheet">
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+<!--    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>-->
 
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -33,28 +31,18 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Eugene Ishimov</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://use.fontawesome.com/d5cda584ec.js"></script>
+    <script src="./scripts/p5.min.js"></script>
 </head>
-<body class="preload">
+<body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
 
 
 <div id="root"></div>
 
 
-<div class="sk-cube-grid" id="preloader">
-    <div class="sk-cube sk-cube1"></div>
-    <div class="sk-cube sk-cube2"></div>
-    <div class="sk-cube sk-cube3"></div>
-    <div class="sk-cube sk-cube4"></div>
-    <div class="sk-cube sk-cube5"></div>
-    <div class="sk-cube sk-cube6"></div>
-    <div class="sk-cube sk-cube7"></div>
-    <div class="sk-cube sk-cube8"></div>
-    <div class="sk-cube sk-cube9"></div>
-</div>
 <!--
   This HTML file is a template.
   If you open it directly in the browser, you will see an empty page.
@@ -65,5 +53,45 @@
   To begin the development, run `npm start` or `yarn start`.
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
+
+
+<style type="text/css">#preloader > p {
+    display: none;
+}
+
+#preloader_preload {
+    display: block;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    background: #1c1c1c url(http://hello-site.ru//main/images/preloads/three-dots.svg) center center no-repeat;
+    background-size: 41px;
+}</style>
+<div id="preloader">
+    <div id="preloader_preload"></div>
+    <script type="text/javascript">
+        var preloader = document.getElementById("preloader_preload");
+
+        function fadeOutnojquery(el) {
+            el.style.opacity = 1;
+            var interpreloader = setInterval(function () {
+                el.style.opacity = el.style.opacity - 0.05;
+                if (el.style.opacity <= 0.05) {
+                    clearInterval(interpreloader);
+                    preloader.style.display = "none";
+                }
+            }, 16);
+        }
+
+        window.onload = function () {
+            setTimeout(function () {
+                fadeOutnojquery(preloader);
+            }, 1500);
+        };</script>
+
 </body>
 </html>

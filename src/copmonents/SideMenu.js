@@ -2,8 +2,8 @@ import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
 import styled, {css} from 'styled-components';
 import {MenuContext} from '../context/navState';
-import arrow from '../assets/svg/arrow.svg';
 import '../assets/css/Links.css'
+
 
 const Menu = styled.nav`
   position: absolute;
@@ -21,7 +21,8 @@ const Menu = styled.nav`
   background-color: #19181A;
   transform: translateX(-100%);
   transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-
+  //height: 900px;
+  
   ${props =>
           props.open &&
           css`
@@ -29,36 +30,14 @@ const Menu = styled.nav`
           `}
 `;
 
-export const MenuLink = styled.a`
-  position: relative;
-  display: block;
-  text-align: center;
-  max-width: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  //padding-left: 16%;
-  // background-image: url(${arrow});
-  //background-position: 88% 50%;
-  //background-size: 36px;
-  //background-repeat: no-repeat;
-  //transition: background-position 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  text-decoration: none;
-  color: #fff;
-  font-size: 70px;
-  line-height: 120%;
-  font-weight: 800;
-
-  :hover {
-    //background-position: 90% 50%;
-    color: blue;
-  }
-`;
 
 export const SideMenu = ({children}) => {
     const {isMenuOpen} = useContext(MenuContext);
 
+
     return <Menu open={isMenuOpen}><span>{children}</span></Menu>;
 };
+
 
 SideMenu.propTypes = {
     children: PropTypes.node,
@@ -67,10 +46,10 @@ SideMenu.propTypes = {
 SideMenu.defaultProps = {
     children: (
         <div className="links-wrapper">
-           <a className="links-effect" href="/">Home</a>
-           <a className="links-effect" href="/">About</a>
-           <a className="links-effect" href="/">Works</a>
-           <a className="links-effect" href="/">Contacts</a>
+            <a className="links-effect transition-fade" href="/">Home</a>
+            <a className="links-effect transition-fade" href="/about">About</a>
+            <a className="links-effect transition-fade" href="/works">Works</a>
+            <a className="links-effect transition-fade" href="/contact">Contact</a>
         </div>
     ),
 };

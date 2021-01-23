@@ -1,23 +1,27 @@
-import {useState, useEffect} from 'react'
+
 import './App.css';
 import {useRoutes} from "./routes";
 import Cursor from "./copmonents/Cursor";
 import MainMenu from "./copmonents/MainMenu";
 import NavState from "./context/navState";
+import './assets/css/animate.css'
+
 function App() {
 
-    const [loading, setLoading] = useState(true)
 
-    const demoAsyncCall = () => {
-        return new Promise((resolve) => setTimeout(() => resolve(), 2000));
-    }
-
-    useEffect(() => {
-        demoAsyncCall().then(() => {
-            setLoading(!loading)
-        })
-    }, [])
-
+    // const swup = new Swup();
+    // const [loading, setLoading] = useState(true)
+    //
+    // const demoAsyncCall = () => {
+    //     return new Promise((resolve) => setTimeout(() => resolve(), 1000));
+    // }
+    //
+    // useEffect(() => {
+    //     demoAsyncCall().then(() => {
+    //         setLoading(!loading)
+    //     })
+    // }, [])
+    //
     // if (loading) {
     //     return null
     // }

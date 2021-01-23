@@ -1,6 +1,10 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
-import { MenuContext } from '../context/navState';
+import {MenuContext} from '../context/navState';
+
+import logoW from '../assets/images/logo-w.png'
+import '../assets/css/Menu.css'
+
 
 const MenuButton = styled.button`
   display: block;
@@ -80,23 +84,37 @@ const Bar3 = styled.span`
 
 
 const HamburgerButton = () => {
-  const { isMenuOpen, toggleMenuMode } = useContext(MenuContext);
+    const {isMenuOpen, toggleMenuMode} = useContext(MenuContext);
 
-  const clickHandler = () => {
-    toggleMenuMode();
-  };
+    const clickHandler = () => {
+        toggleMenuMode();
+    };
 
-  return (
-    <MenuButton
-      className={isMenuOpen ? 'active' : ''}
-      aria-label="Открыть главное меню"
-      onClick={clickHandler}
-    >
-      <Bar1 />
-      <Bar2 />
-      <Bar3 />
-    </MenuButton>
-  );
+    // return (
+    //     // <>
+    //     //     <div className="res-menu">
+    //     //         <input id="burger" type="checkbox"/>
+    //     //
+    //     //         <label for="burger">
+    //     //             <span></span>
+    //     //             <span></span>
+    //     //             <span></span>
+    //     //         </label>
+    //     //
+    //     //         <nav>
+    //     //             <ul>
+    //     //                 <li><a href="/">Home</a></li>
+    //     //                 <li><a href="/about">About</a></li>
+    //     //                 <li><a href="/works">Works</a></li>
+    //     //                 <li><a href="/contact">Contact</a></li>
+    //     //             </ul>
+    //     //         </nav>
+    //     //     </div>
+    //     //     <a href="/"><img src={logoW} alt="img" style={{width: '200px'}}/></a>
+    //     //
+    //     //
+    //     // </>
+    // );
 };
 
 export default HamburgerButton;

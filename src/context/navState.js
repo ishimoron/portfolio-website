@@ -5,6 +5,7 @@ export const MenuContext = createContext({
     isMenuOpen: true,
     toggleMenu: () => {
     },
+    isLink: true
 });
 
 const NavState = ({children}) => {
@@ -13,9 +14,12 @@ const NavState = ({children}) => {
     function toggleMenuMode() {
         toggleMenu(!isMenuOpen);
     }
+    function toggleMenuLink() {
+        toggleMenu(!isMenuOpen);
+    }
 
     return (
-        <MenuContext.Provider value={{isMenuOpen, toggleMenuMode}}>{children}</MenuContext.Provider>
+        <MenuContext.Provider value={{isMenuOpen, toggleMenuMode, toggleMenuLink}}>{children}</MenuContext.Provider>
     );
 };
 

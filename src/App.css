@@ -1,5 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inconsolata', monospace;
+    overflow-x: hidden !important;
+    background-color: #1d1d1d !important;
 }
 
 ::selection {
@@ -15,72 +23,11 @@ body {
     color: #fff;
 }
 
-/*loader*/
 
-    #app:not(:empty) + .sk-cube-grid {
-        display: none;
-    }
-
-.sk-cube-grid {
-    width: 40px;
-    height: 40px;
-    margin: 20% auto;
+.body-hidden{
     overflow: hidden;
 }
 
-.sk-cube-grid .sk-cube {
-    width: 33%;
-    height: 33%;
-    background-color: #fff;
-    float: left;
-    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+ul li {
+    list-style-type: none !important;
 }
-
-.sk-cube-grid .sk-cube1 {
-    animation-delay: 0.2s;
-}
-
-.sk-cube-grid .sk-cube2 {
-    animation-delay: 0.3s;
-}
-
-.sk-cube-grid .sk-cube3 {
-    animation-delay: 0.4s;
-}
-
-.sk-cube-grid .sk-cube4 {
-    animation-delay: 0.1s;
-}
-
-.sk-cube-grid .sk-cube5 {
-    animation-delay: 0.2s;
-}
-
-.sk-cube-grid .sk-cube6 {
-    animation-delay: 0.3s;
-}
-
-.sk-cube-grid .sk-cube7 {
-    animation-delay: 0s;
-}
-
-.sk-cube-grid .sk-cube8 {
-    animation-delay: 0.1s;
-}
-
-.sk-cube-grid .sk-cube9 {
-    animation-delay: 0.2s;
-}
-
-@keyframes sk-cubeGridScaleDelay {
-    0%,
-    70%,
-    100% {
-        transform: scale3D(1, 1, 1);
-    }
-    35% {
-        transform: scale3D(0, 0, 1);
-    }
-}
-
-

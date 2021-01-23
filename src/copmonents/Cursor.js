@@ -14,11 +14,6 @@ const Cursor = () => {
     const [clicked, setClicked] = useState(false);
     const [linkHovered, setLinkHovered] = useState(false);
 
-    useEffect(() => {
-        addEventListeners();
-        handleLinkHoverEvents();
-        return () => removeEventListeners();
-    }, []);
 
     const handleLinkHoverEvents = () => {
         document.querySelectorAll("a").forEach(el => {
@@ -72,6 +67,11 @@ const Cursor = () => {
         setPosition({x: e.clientX, y: e.clientY});
     };
 
+    useEffect(() => {
+        addEventListeners();
+        handleLinkHoverEvents();
+        return () => removeEventListeners();
+    }, []);
     if (typeof navigator !== 'undefined' && isMobile()) return null;
     return (
 

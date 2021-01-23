@@ -30,9 +30,8 @@
 html,
 body {
     cursor: none;
-    background-color: #121212;
-    color: #fefefe;
     font-family: "Space Mono", sans-serif;
+    color: #fff;
 }
 
 html *,
